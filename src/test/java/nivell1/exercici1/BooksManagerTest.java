@@ -101,5 +101,16 @@ class BooksManagerTest {
 
     }
 
+    @Test
+    void addBookAtSpecificPositionTest(){
+        IO.println("Testing: add book at specifica position");
+        booksArrayList = new ArrayList<>();
+        BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
+        BooksManager.addBook("El quijote3", "Cervantes", booksArrayList);
+        BooksManager.addBook("El quijote2", "Cervantes", booksArrayList);
+        BooksManager.addBookToSpecificPosition(new Book("Testing",  "Tron"),1,booksArrayList);
+        assertEquals("Testing",BooksManager.getBookTitleByPosition(booksArrayList,1));
+    }
+
 
 }

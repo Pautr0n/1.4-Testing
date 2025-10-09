@@ -2,8 +2,8 @@ package nivell1.exercici1;
 
 public class Book {
 
-    private String title;
-    private String author;
+    private final String title;
+    private final String author;
 
     public Book(String title, String author) {
         this.title = title;
