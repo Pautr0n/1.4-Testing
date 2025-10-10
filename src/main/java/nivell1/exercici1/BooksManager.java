@@ -92,7 +92,7 @@ public class BooksManager {
         @Override
         public int compare(Book o1, Book o2) {
 
-            return o1.getTitle().compareTo(o2.getTitle());
+            return o1.getTitle().toLowerCase().compareTo(o2.getTitle().toLowerCase());
         }
     }
 }

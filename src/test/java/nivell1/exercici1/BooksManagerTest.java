@@ -33,6 +33,8 @@ class BooksManagerTest {
         BooksManager.addBook("Antes muerta que sencilla", "Melody", booksArrayList);
         BooksManager.addBook("Zootropolis", "Disney", booksArrayList);
         BooksManager.printBookCollection(booksArrayList);
+        BooksManager.addBook("ZZ Top", "Cool", booksArrayList);
+        BooksManager.printBookCollection(booksArrayList);
 
     }
 
