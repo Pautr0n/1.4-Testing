@@ -13,18 +13,18 @@ class BooksManagerTest {
     ArrayList<Book> booksArrayList;
 
     @BeforeEach
-    void separator(){
-        IO.println(":: New Test Starts ::");
+    void separator() {
+        System.out.println(":: New Test Starts ::");
     }
 
     @AfterEach
-    void separator2(){
-        IO.println(":: Test Finish ::");
+    void separator2() {
+        System.out.println(":: Test Finish ::");
     }
 
     @Test
     void printBookCollection() {
-        IO.println("Testing Sorted books");
+        System.out.println("Testing Sorted books");
         booksArrayList = new ArrayList<>();
         BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
         BooksManager.addBook("El quijote3", "Cervantes", booksArrayList);
@@ -40,7 +40,7 @@ class BooksManagerTest {
 
     @Test
     void addBookTest() {
-        IO.println("Testing: addBook() method and adding book modifies list.");
+        System.out.println("Testing: addBook() method and adding book modifies list.");
         assertNull(booksArrayList);
         booksArrayList = new ArrayList<>();
         BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
@@ -53,9 +53,9 @@ class BooksManagerTest {
     }
 
     @Test
-    void expectedSizeTest (){
+    void expectedSizeTest() {
 
-        IO.println("Testing: expexted size of library.");
+        System.out.println("Testing: expexted size of library.");
         booksArrayList = new ArrayList<>();
         BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
         assertEquals(1, booksArrayList.size());
@@ -67,20 +67,20 @@ class BooksManagerTest {
     }
 
     @Test
-    void bookAtSpecificPositionTest(){
-        IO.println("Testing: book at specific position");
+    void bookAtSpecificPositionTest() {
+        System.out.println("Testing: book at specific position");
         booksArrayList = new ArrayList<>();
         BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
         BooksManager.addBook("El quijote3", "Cervantes", booksArrayList);
         BooksManager.addBook("El quijote2", "Cervantes", booksArrayList);
-        assertEquals("El quijote", BooksManager.getBookTitleByPosition(booksArrayList,0));
-        assertEquals("El quijote2", BooksManager.getBookTitleByPosition(booksArrayList,2));
+        assertEquals("El quijote", BooksManager.getBookTitleByPosition(booksArrayList, 0));
+        assertEquals("El quijote2", BooksManager.getBookTitleByPosition(booksArrayList, 2));
 
     }
 
     @Test
-    void duplicateNoAllowedTest(){
-        IO.println("Testing: not allowing duplicates");
+    void duplicateNoAllowedTest() {
+        System.out.println("Testing: not allowing duplicates");
         booksArrayList = new ArrayList<>();
         BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
         BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
@@ -90,10 +90,9 @@ class BooksManagerTest {
     }
 
 
-
     @Test
     void deleteBookByTitle() {
-        IO.println("Testing: delete book by title");
+        System.out.println("Testing: delete book by title");
         booksArrayList = new ArrayList<>();
         BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
         BooksManager.addBook("El quijote3", "Cervantes", booksArrayList);
@@ -104,14 +103,14 @@ class BooksManagerTest {
     }
 
     @Test
-    void addBookAtSpecificPositionTest(){
-        IO.println("Testing: add book at specifica position");
+    void addBookAtSpecificPositionTest() {
+        System.out.println("Testing: add book at specifica position");
         booksArrayList = new ArrayList<>();
         BooksManager.addBook("El quijote", "Cervantes", booksArrayList);
         BooksManager.addBook("El quijote3", "Cervantes", booksArrayList);
         BooksManager.addBook("El quijote2", "Cervantes", booksArrayList);
-        BooksManager.addBookToSpecificPosition(new Book("Testing",  "Tron"),1,booksArrayList);
-        assertEquals("Testing",BooksManager.getBookTitleByPosition(booksArrayList,1));
+        BooksManager.addBookToSpecificPosition(new Book("Testing", "Tron"), 1, booksArrayList);
+        assertEquals("Testing", BooksManager.getBookTitleByPosition(booksArrayList, 1));
     }
 
 

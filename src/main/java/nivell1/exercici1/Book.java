@@ -15,13 +15,13 @@ public class Book {
     }
 
 
-    protected String getTitle(){
+    protected String getTitle() {
         return title;
     }
 
     @Override
-    public String toString(){
-        return this.getTitle() + " | " + this.getAuthor()+"\n";
+    public String toString() {
+        return this.getTitle() + " | " + this.getAuthor() + "\n";
     }
 
 }
