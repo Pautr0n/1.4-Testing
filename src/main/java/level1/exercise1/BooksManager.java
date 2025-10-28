@@ -13,7 +13,7 @@ public class BooksManager {
         return booksArrayList;
     }
 
-    public BooksManager(ArrayList<Book> arrayList){
+    public BooksManager(ArrayList<Book> arrayList) {
         this.booksArrayList = arrayList;
     }
 
@@ -45,6 +45,7 @@ public class BooksManager {
         System.out.println("The book " + newBook + " has been added.");
 
     }
+
     void addBook(Book book) {
 
         for (Book value : booksArrayList) {

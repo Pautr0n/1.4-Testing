@@ -3,6 +3,7 @@ package level1.exercise2;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -16,6 +17,6 @@ class CalculoDNITest {
     @ValueSource(strings = {DNI1, DNI2, DNI3, DNI4, DNI5, DNI6, DNI7, DNI8, DNI9, DNI10})
     void calculateDniLetterTest(String candidate) {
         char character = CalculoDNI.calculateDniLetter(candidate);
-        assertNotEquals('\0',character);
+        assertNotEquals('\0', character);
     }
 }

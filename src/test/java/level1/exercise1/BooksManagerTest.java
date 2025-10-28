@@ -85,7 +85,7 @@ class BooksManagerTest {
     @Test
     void duplicateNoAllowedTest() {
 
-        assertEquals(7,bm.getBooksArrayList().size());
+        assertEquals(7, bm.getBooksArrayList().size());
         bm.addBook("El quijote", "Cervantes");
         assertEquals(7, booksArrayList.size());
 
