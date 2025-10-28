@@ -4,7 +4,7 @@ package level1.exercise2;
 public class CalculoDNI {
 
 
-    static void calculateDniLetter(String dni) {
+    static char calculateDniLetter(String dni) {
 
         if (dni.length() == 8) {
             try {
@@ -12,12 +12,14 @@ public class CalculoDNI {
                 int dniInt = Integer.parseInt(dni);
                 String dniLetters = "TRWAGMYFPDXBNJZSQVHLCKE";
                 remainder = dniInt % 23;
-                System.out.println("DNI: " + dni + dniLetters.charAt(remainder));
+                return dniLetters.charAt(remainder);
             } catch (NumberFormatException e) {
                 System.out.println("only numbers allowed.");
+                return '\0';
             }
         } else {
             System.out.println("DNI format not valid");
+            return '\0';
         }
     }
 }
