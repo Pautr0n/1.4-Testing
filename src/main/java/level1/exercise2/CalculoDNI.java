@@ -1,4 +1,4 @@
-package nivell1.exercici2;
+package level1.exercise2;
 
 
 public class CalculoDNI {

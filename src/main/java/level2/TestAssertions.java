@@ -1,4 +1,4 @@
-package nivell2;
+package level2;
 
 class TestAssertions {
 

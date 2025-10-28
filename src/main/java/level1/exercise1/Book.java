@@ -1,4 +1,4 @@
-package nivell1.exercici1;
+package level1.exercise1;
 
 public class Book {
 

@@ -1,6 +1,6 @@
-package nivell2;
+package level2;
 
-import nivell1.exercici1.Book;
+import level1.exercise1.Book;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
