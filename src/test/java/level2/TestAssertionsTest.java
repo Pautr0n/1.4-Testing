@@ -4,6 +4,9 @@ import level1.exercise1.Book;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -12,11 +15,11 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestAssertionsTest {
-
+    private static final Logger logger = LoggerFactory.getLogger(TestAssertionsTest.class);
 
     @AfterEach
     void lines() {
-        System.out.println("-------------TEST SUCCEEDED -------------");
+        logger.info("-------------TEST SUCCEEDED -------------");
     }
 
     @Test
@@ -24,6 +27,7 @@ class TestAssertionsTest {
     void valueEqualityTest() {
 
         class Car {
+
             final String model;
             final String brand;
 
@@ -47,13 +51,13 @@ class TestAssertionsTest {
     @Test
     @DisplayName("Exercici 2: Assertion Reference equality")
     void referenceEqualityTest() {
+
         Book value1 = new Book("El Quijote", "Cervantes"), value2;
         value2 = value1;
         assertThat(value1).isSameAs(value2);
 
         value2 = new Book("El Quijote", "Cervantes");
         assertThat(value1).isNotSameAs(value2);
-
 
     }
 
@@ -78,7 +82,6 @@ class TestAssertionsTest {
         char object4 = 'c';
         String object5 = "Tron";
         Book object6 = new Book("El Quijote", "Cervantes");
-
 
         ArrayList<Object> arrayList = new ArrayList<>();
         arrayList.add(object1);
@@ -111,7 +114,6 @@ class TestAssertionsTest {
     @DisplayName("Exercici 6: assert IndexOutOfBounds")
     void indexOutOfBoundsExceptionTest() {
 
-
         ArrayList<Integer> array = new ArrayList<>();
         array.add(1);
         array.add(1);
@@ -119,13 +121,16 @@ class TestAssertionsTest {
         array.add(1);
 
         assertThrows(IndexOutOfBoundsException.class, () -> array.get(5));
+
     }
 
     @Test
     @DisplayName("Exercici 7: IsEmpty")
     void optionalEmptyTest() {
+
         Optional<String> optional = Optional.empty();
         assertThat(optional).isEmpty();
+
     }
 
 }

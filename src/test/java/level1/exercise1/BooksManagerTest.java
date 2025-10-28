@@ -1,8 +1,11 @@
 package level1.exercise1;
 
+import level2.TestAssertionsTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 
@@ -10,13 +13,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BooksManagerTest {
 
+    private static final Logger logger = LoggerFactory.getLogger(BooksManagerTest.class);
     ArrayList<Book> booksArrayList;
     BooksManager bm;
     Book elquijote, elquijote2, elquijote3, dosTorres, melody, zootropolis, zzTop, testing;
 
     @BeforeEach
     void setUp() {
-        System.out.println(":: New Test Starts ::");
+
+        logger.info(":: New Test Starts ::");
         elquijote = new Book("El quijote", "Cervantes");
         elquijote2 = new Book("El quijote2", "Cervantes");
         elquijote3 = new Book("El quijote3", "Cervantes");
@@ -34,16 +39,17 @@ class BooksManagerTest {
         booksArrayList.add(zootropolis);
         booksArrayList.add(elquijote3);
         bm = new BooksManager(booksArrayList);
+
     }
 
     @AfterEach
     void separator2() {
-        System.out.println(":: Test Finish ::");
+        logger.info(":: Test Finish ::");
     }
 
     @Test
     void printBookCollection() {
-        System.out.println("Testing Sorted books");
+
         bm.printBookCollection();
         bm.addBook("ZZ Top", "Cool");
         bm.printBookCollection();
@@ -52,6 +58,7 @@ class BooksManagerTest {
 
     @Test
     void addBookTest() {
+
         ArrayList<Book> testAl = new ArrayList<>();
         BooksManager testBm = new BooksManager(testAl);
         assertTrue(testBm.getBooksArrayList().isEmpty());
@@ -60,7 +67,6 @@ class BooksManagerTest {
         assertEquals(1, testBm.getBooksArrayList().size());
         testBm.addBook(elquijote2);
         assertEquals(2, testBm.getBooksArrayList().size());
-
 
     }
 
@@ -77,6 +83,7 @@ class BooksManagerTest {
 
     @Test
     void bookAtSpecificPositionTest() {
+
         assertEquals("El quijote", bm.getBookTitleByPosition(0));
         assertEquals("El quijote2", bm.getBookTitleByPosition(1));
 
@@ -94,6 +101,7 @@ class BooksManagerTest {
 
     @Test
     void deleteBookByTitle() {
+
         assertEquals(7, bm.getBooksArrayList().size());
         bm.deleteBookByTitle("El quijote");
         assertEquals(6, booksArrayList.size());
@@ -102,8 +110,10 @@ class BooksManagerTest {
 
     @Test
     void addBookAtSpecificPositionTest() {
+
         bm.addBookToSpecificPosition(new Book("Testing", "Tron"), 1);
         assertEquals("Testing", bm.getBookTitleByPosition(1));
+
     }
 
 
